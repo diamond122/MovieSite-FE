@@ -9,9 +9,11 @@ export class SideBarComponent implements OnInit {
 
 
   private _menuItems: string[] = [];
+  private _year: number;
 
   public constructor() {
     this._menuItems = ['Trending', 'Recommend me', 'Settings'];
+    this._year = new Date().getFullYear();
   }
 
   public ngOnInit(): void {
@@ -19,6 +21,10 @@ export class SideBarComponent implements OnInit {
 
   public get menuItems(): string[] {
     return this._menuItems;
+  }
+
+  public get year(): number {
+    return this._year;
   }
 
 }
