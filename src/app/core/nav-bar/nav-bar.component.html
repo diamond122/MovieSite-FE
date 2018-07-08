@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <form class="form-inline my-2 my-lg-0">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fas fa-search" [ngClass]="{'active': active}"></i>
+        </span>
+      </div>
+      <input type="" class="form-control" placeholder="Search" aria-label="Search" (focus)="active = true" (blur)="active = false">
+    </div>
+  </form>
+</nav>
