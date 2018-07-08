@@ -71,4 +71,13 @@
       }
     }
   }
+  .copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    h5 {
+      text-align: center;
+      color: $gray;
+    }
+  }
 }
