@@ -9,6 +9,7 @@ import { UserChartComponent } from './user-profile/user-chart/user-chart.compone
   imports: [
     CommonModule
   ],
-  declarations: [UserProfileComponent, UserDetailsComponent, UserRatesComponent, UserChartComponent]
+  declarations: [UserProfileComponent, UserDetailsComponent, UserRatesComponent, UserChartComponent],
+  exports: [UserProfileComponent]
 })
 export class ComponentsModule { }
