@@ -1,15 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserDetailsComponent } from './user-profile/user-details/user-details.component';
-import { UserRatesComponent } from './user-profile/user-rates/user-rates.component';
-import { UserChartComponent } from './user-profile/user-chart/user-chart.component';
+import { UserProfileModule } from './user-profile/user-profile.module';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [UserProfileComponent, UserDetailsComponent, UserRatesComponent, UserChartComponent],
-  exports: [UserProfileComponent]
+  imports: [CommonModule, UserProfileModule]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}
