@@ -1,11 +1,14 @@
-@import "./src/assets/scss/colors";
-@import "./src/assets/scss/common";
+@import './src/assets/scss/colors';
+@import './src/assets/scss/common';
 .navbar {
   background-color: $black;
+  position: fixed;
+  z-index: 1030;
+  width: 100%;
   .form-inline {
     width: 100%;
     .input-group {
-      width: 100%;
+      width: 85%;
       .input-group-prepend span {
         background: transparent;
         border: none;
@@ -26,14 +29,14 @@
 }
 
 ::-webkit-input-placeholder {
-   font-style: italic;
+  font-style: italic;
 }
 :-moz-placeholder {
-   font-style: italic;
+  font-style: italic;
 }
 ::-moz-placeholder {
-   font-style: italic;
+  font-style: italic;
 }
 :-ms-input-placeholder {
-   font-style: italic;
+  font-style: italic;
 }

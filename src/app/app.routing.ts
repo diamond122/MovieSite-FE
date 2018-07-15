@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MovieProfileComponent } from './core/movie-profile/movie-profile.component';
+import { MovieProfileComponent } from './components/movie-profile/movie-profile.component';
+import { AppComponent } from './app.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const appRoutes: Routes = [
-  { path: 'movies', component: MovieProfileComponent}
+  { path: '', component: AppComponent},
+  { path: 'movie/:id', component: MovieProfileComponent},
+  { path: 'user', component: UserProfileComponent}
 ];
 
 @NgModule({

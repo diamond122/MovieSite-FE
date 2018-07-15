@@ -1,0 +1,27 @@
+@import './src/assets/scss/colors';
+.card {
+  background-color: $red;
+  width: 300px;
+  border: 0;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 3px 0px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 0px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+
+  & .c-header {
+    padding: 2rem 2.5rem 2rem 2rem;
+    border-bottom: 0px;
+  }
+  & .c-title {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+  & .c-block {
+    padding-top: 0;
+  }
+}
+
+.display-2 {
+  font-size: 7rem;
+  letter-spacing: -0.5rem;
+}
