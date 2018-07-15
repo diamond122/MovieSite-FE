@@ -1,6 +1,10 @@
 <div id="wrapper">
-  <app-side-bar class="main-side"></app-side-bar>
-  <app-nav-bar class="main-navb"></app-nav-bar>
+  <div class="main-side">
+    <app-side-bar></app-side-bar>
+  </div>
+  <div class="main-navb" *ngIf="path != '/user'">
+    <app-nav-bar></app-nav-bar>
+  </div>
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>

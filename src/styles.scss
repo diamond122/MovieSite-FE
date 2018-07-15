@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'assets/scss/common';
+@import 'assets/scss/common';
 
 html,
 body {
   color: white;
+  background-color: $main-content;
+}
+
+i {
+  margin-right: 10px;
 }

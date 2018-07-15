@@ -1,6 +1,7 @@
+@import '../assets/scss/colors';
 #wrapper {
   display: grid;
-  background-color: gray;
+  background-color: $black;
   grid-template-columns: 250px 1fr;
   grid-template-rows: 55px 1fr;
   grid-template-areas:
@@ -12,8 +13,7 @@
   }
   .main-content {
     grid-area: main;
-    padding: 50px;
-    height: 100vh;
+    padding: 0 50px;
   }
   .main-navb {
     grid-area: navb;

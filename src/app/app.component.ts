@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  path: string;
+  constructor(private _router: Router) {
+    // Check current route
+    _router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.path = _router.url;
+        console.log(this.path);
+      }
+    });
+  }
 }
