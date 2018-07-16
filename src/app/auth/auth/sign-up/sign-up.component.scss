@@ -1,0 +1,29 @@
+.container {
+  padding-top: 5%;
+  form {
+    .form-row {
+      margin-bottom: 20px;
+      .form-group {
+        label {
+          font-size: 18px;
+        }
+      }
+    }
+    .passwords-not-match {
+      display: block;
+      margin-bottom: 30px;
+    }
+    .row {
+      padding-bottom: 20px;
+      .col-12 {
+        button {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  color: black;
+}

@@ -1,0 +1,97 @@
+<div class="container">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-xs-12 col-md-6 form-group">
+        <label for="validationServer01">First name</label>
+        <input type="text" class="form-control is-valid" [ngClass]="{'is-valid': signUpForm.get('name').valid
+          && signUpForm.get('name').touched, 'is-invalid': !signUpForm.get('name').valid && signUpForm.get('name').touched }"
+          formControlName="name" id="name" placeholder="First name">
+        <div *ngIf="!signUpForm.get('name').valid && signUpForm.get('name').touched" class="invalid-feedback">
+          Please insert the name
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 form-group">
+        <label for="validationServer02">Last name</label>
+        <input type="text" class="form-control is-valid" [ngClass]="{'is-valid': signUpForm.get('lastName').valid
+          && signUpForm.get('lastName').touched, 'is-invalid': !signUpForm.get('lastName').valid && signUpForm.get('lastName').touched }"
+          formControlName="lastName" id="lastName" placeholder="Last name">
+        <div *ngIf="!signUpForm.get('lastName').valid && signUpForm.get('lastName').touched" class="invalid-feedback">
+          Please insert the name
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-12">
+        <label for="email">Email</label>
+        <input type="email" [ngClass]="{'is-valid': signUpForm.get('email').valid && signUpForm.get('email').touched,
+              'is-invalid': !signUpForm.get('email').valid && signUpForm.get('email').touched }" formControlName="email"
+          class="form-control" id="_email" aria-describedby="emailHelp" placeholder="Enter email">
+        <div *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched" class="invalid-feedback">
+          <div *ngIf="signUpForm.get('email').errors['required']">
+            Please insert an email.
+          </div>
+          <div *ngIf="signUpForm.get('email').errors['email'] && !signUpForm.get('email').errors['required']">
+            Please insert a correct email.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row" formGroupName="passwords">
+      <div class="col-xs-12 col-md-6 form-group">
+        <label for="validationServer03">Password</label>
+        <input type="password" formControlName="password" [ngClass]="{'is-valid': signUpForm.get('passwords.password').valid && signUpForm.get('passwords.password').touched,
+          'is-invalid': !signUpForm.get('passwords.password').valid && signUpForm.get('passwords.password').touched }" class="form-control"
+          id="_password" placeholder="Password">
+
+        <div *ngIf="!signUpForm.get('passwords.password').valid && signUpForm.get('passwords.password').touched" class="invalid-feedback">
+          <div *ngIf="signUpForm.get('passwords.password').errors['required']">
+            Please Insert the password
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 form-group">
+        <label for="validationServer04">Confirm Password</label>
+        <input type="password" formControlName="confirmPassword" [ngClass]="{'is-valid': signUpForm.get('passwords.confirmPassword').valid && signUpForm.get('passwords.confirmPassword').touched,
+          'is-invalid': !signUpForm.get('passwords.confirmPassword').valid && signUpForm.get('passwords.confirmPassword').touched }"
+          class="form-control is-invalid" id="confirmPassword" placeholder="Confirm Password">
+        <div *ngIf="!signUpForm.get('passwords.confirmPassword').valid && signUpForm.get('passwords.confirmPassword').touched" class="invalid-feedback">
+          <div *ngIf="signUpForm.get('passwords.confirmPassword').errors['required']">
+            Please confirm the password
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="signUpForm.get('passwords').errors  && signUpForm.get('passwords.password').touched  && signUpForm.get('passwords.confirmPassword').touched"
+      class="invalid-feedback passwords-not-match">
+      Passwords do not match
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-success btn-block" type="submit" [disabled]="!signUpForm.valid">Submit form</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="display: none;" #modal></button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{message}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

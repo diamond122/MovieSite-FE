@@ -31,10 +31,18 @@
         width: 100%;
         height: 100%;
         margin-left: 15px;
+        > .modal--div {
+          margin-top: auto;
+          margin-bottom: auto;
+          &:focus {
+            outline: none;
+          }
+        }
         img,
         a {
           margin-top: auto;
           margin-bottom: auto;
+          background-color: $red;
         }
         img {
           width: 60px;

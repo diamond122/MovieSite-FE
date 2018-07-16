@@ -1,0 +1,56 @@
+<div class="container">
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+      <label for="email">Email</label>
+      <input type="email" [ngClass]="{'is-valid': signInForm.get('email').valid && signInForm.get('email').touched,
+        'is-invalid': !signInForm.get('email').valid && signInForm.get('email').touched }" formControlName="email" class="form-control"
+        id="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <div *ngIf="!signInForm.get('email').valid && signInForm.get('email').touched" class="invalid-feedback">
+        <div *ngIf="signInForm.get('email').errors['required']">
+          Please insert an email.
+        </div>
+        <div *ngIf="signInForm.get('email').errors['email'] && !signInForm.get('email').errors['required']">
+          Please insert a correct email.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" [ngClass]="{'is-valid': signInForm.get('password').valid && signInForm.get('password').touched,
+        'is-invalid': !signInForm.get('password').valid && signInForm.get('password').touched }" formControlName="password"
+        class="form-control" id="password" placeholder="Password">
+      <div *ngIf="!signInForm.get('password').valid && signInForm.get('password').touched" class="invalid-feedback">
+        Please insert an password.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!signInForm.valid">Submit
+      <i class="fas fa-circle-notch fa-spin" *ngIf="loading"></i>
+    </button>
+  </form>
+</div>
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: none;" #modal></button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{message}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="redirect()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

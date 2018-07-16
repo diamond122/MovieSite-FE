@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '../../../../node_modules/@angular/router';
+import { AuthService } from '../../auth/auth.service';
+import { User } from '../../global/models/User';
+import { LocalStorageService } from '../../global/service/local-storage.service';
 
 interface MenuItems {
   title: string;
@@ -14,14 +16,23 @@ interface MenuItems {
 export class SideBarComponent implements OnInit {
   private _menuItems: MenuItems[] = [];
   private _year: number;
+  private _authenticated: {token: string | null, user: User | null} | null = { token: '', user: null };
 
-  public constructor(private router: Router) {
+  public constructor(private authService: AuthService, private localStorageService: LocalStorageService) {
     this._menuItems = [
-      { title: 'Trending', icon: 'fas fa-chart-line', path: 'trending' },
-      { title: 'Recommend me', icon: 'fas fa-user', path: 'recomendation' },
+      { title: 'Movies', icon: 'fas fa-chart-line', path: '' },
       { title: 'Settings', icon: 'fas fa-cogs', path: 'user' }
     ];
     this._year = new Date().getFullYear();
+
+    this._authenticated.token = this.localStorageService.getItem('token');
+    this._authenticated.user = JSON.parse(this.localStorageService.getItem('user'));
+
+    this.authService.isAuthenticated().subscribe((_identity: {token: string | null, user: User | null} | null): void => {
+      if (_identity) {
+        this._authenticated = _identity;
+      }
+    });
   }
 
   public ngOnInit(): void {}
@@ -34,7 +45,8 @@ export class SideBarComponent implements OnInit {
     return this._year;
   }
 
-  public redir(_path: string): void {
-    this.router.navigate(['/', _path]);
+  public get authenticated(): {token: string | null, user: User | null} | null {
+    return this._authenticated;
   }
+
 }
