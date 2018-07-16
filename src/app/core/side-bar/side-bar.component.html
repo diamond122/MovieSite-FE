@@ -2,10 +2,12 @@
   <ul class="sidebar-nav">
     <li class="sidebar-brand">
       <div class="user--info">
-        <img src="http://cdn.onlinewebfonts.com/svg/img_316131.png" alt="user">
-        <a href="#">
-          UserName
-        </a>
+        <div class="modal--div" *ngIf="!authenticated.token" routerLink="auth">
+          Sign-in / Sign-Up
+        </div>
+        <div class="modal--div" *ngIf="authenticated.token">
+          {{authenticated.user.email}}
+        </div>
       </div>
     </li>
     <li *ngFor="let item of menuItems">

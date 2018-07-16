@@ -9,11 +9,9 @@ import { Router, NavigationEnd } from '../../node_modules/@angular/router';
 export class AppComponent {
   path: string;
   constructor(private _router: Router) {
-    // Check current route
     _router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.path = _router.url;
-        console.log(this.path);
       }
     });
   }

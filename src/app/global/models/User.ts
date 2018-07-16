@@ -6,7 +6,7 @@ export class User {
     private _id: number,
     private _name: string,
     private _lastName: string,
-    private _password: string,
+    private _password: string = null,
     private _email: string,
     private _movieGender: Array<MovieGender>,
     private _movie: Array<Movie>
