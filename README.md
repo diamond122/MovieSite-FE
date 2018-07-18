@@ -2,6 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
+## Instalation
+
+You have to install node.js here [NodeJS](https://nodejs.org/en/) last version
+
+Then install angular-cli [Angular-CLI](https://cli.angular.io/). Run this command line
+```sh
+npm install -g @angular/cli
+```
+
+now you have installed nodejs and angular cli. Go to the root project (where is the `package.json` file) run this command line
+```sh
+npm install
+```
+
+this will install all the modules.
+
+Then run `ng serve` to run the server and navigate to  `http://localhost:4200/` and you will see the web page.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
