@@ -1,0 +1,28 @@
+// .content {
+//   width: 33.33%;
+//   margin: auto;
+//   > .user-info {
+//     margin-top: 100px;
+//   }
+// }
+
+.content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'info votes'
+    'info chart';
+
+  & .user-info {
+    grid-area: info;
+  }
+
+  & .user-votes {
+    grid-area: votes;
+  }
+
+  & .user-chart {
+    grid-area: chart;
+  }
+}

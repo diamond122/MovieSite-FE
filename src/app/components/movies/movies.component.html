@@ -1,0 +1,19 @@
+<app-loading *ngIf="loading; else loaded"></app-loading>
+
+<ng-template #loaded>
+  <div *ngIf="message" >
+    <h1 align="center">{{message}}</h1>
+  </div>
+  <div *ngIf="!message"  class="container-fluid pt-3">
+    <h2>Movies</h2>
+    <div class="row">
+      <div class="col mb-5" *ngFor='let movie of movies | filter : searchText'>
+        <app-movie [movie]=movie></app-movie>
+      </div>
+    </div>
+    <div class="row">
+      <ngb-pagination [collectionSize]="pagination.size" [(page)]="pagination.page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"
+        (pageChange)="pageChanged($event)"></ngb-pagination>
+    </div>
+  </div>
+</ng-template>

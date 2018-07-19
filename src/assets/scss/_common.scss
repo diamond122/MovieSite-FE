@@ -1,0 +1,38 @@
+@import './src/assets/scss/colors';
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $border-bottom;
+  border-radius: 0;
+  transition: all ease;
+  color: $white;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  &:active,
+  &:focus {
+    color: $white;
+    border: none;
+    border-bottom-color: $white;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid $white;
+  }
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}

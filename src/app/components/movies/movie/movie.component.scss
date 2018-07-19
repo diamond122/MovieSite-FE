@@ -1,0 +1,44 @@
+.movie {
+  position: relative;
+  max-width: 280px;
+
+  & .block {
+    max-width: 250px;
+    .like {
+      font-weight: 900;
+    }
+    & .btn-like {
+      position: absolute;
+      top: -25px;
+      right: 0px;
+      & .btn-circle.btn-lg {
+        width: 50px;
+        height: 50px;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 100%;
+      }
+      & i {
+        margin: 0;
+      }
+    }
+    & .movie-info {
+      .movie-title {
+        word-break: break-all;
+        font-size: 15px;
+        font-weight: bold;
+        max-width: 155px;
+      }
+      .movie-category {
+        font-size: 16px;
+        color: gray;
+      }
+      .percent {
+        font-size: 24px;
+        color: #31d225;
+        font-weight: bold;
+      }
+    }
+  }
+}

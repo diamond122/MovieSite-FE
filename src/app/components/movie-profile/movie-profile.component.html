@@ -1,0 +1,24 @@
+<div *ngIf="movie">
+  <div class="movie-name-wraper" [ngStyle]="{'background': 'url(' + bannerUrl + movie.poster_path+ ')'}">
+    <p class="movie-name">{{movie.title}}</p>
+    <div class="point-label">
+      <label class="point">
+        <ngb-rating [(rate)]="movie.vote_average" [readonly]="true" max="10"></ngb-rating>
+        <span>{{movie.vote_average}}</span>
+      </label>
+    </div>
+    <hr>
+  </div>
+
+  <div class="row content-wrapper">
+    <div class="col video-wrapper">
+      <youtube-player [videoId]="videoId" [height]="500" [width]="'100%'"></youtube-player>
+    </div>
+
+    <div class="col-6">
+      <h2 class="summary-tytle">Overview</h2>
+      <p class="summary-content">{{movie.overview}}</p>
+    </div>
+  </div>
+</div>
+<app-loading *ngIf="!movie" ></app-loading>

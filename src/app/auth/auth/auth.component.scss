@@ -1,0 +1,36 @@
+@import './src/assets/scss/common';
+$no-active: #fbfbfb;
+.login-tabs {
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
+  ul {
+    box-shadow: 2px -3px 8px 0 rgba(0, 0, 0, 0.2), 0 -1px 20px 0 rgba(0, 0, 0, 0.19);
+    li {
+      width: 50%;
+      a {
+        height: 70px;
+        text-align: center;
+        color: $black;
+          background-color: $no-active;
+        &.active {
+          background-color: $red;
+          color: $white;
+          border-color: $red;
+        }
+        p {
+          margin-top: 12px;
+          font-size: 20px;
+          text-transform: uppercase;
+          @media screen and (max-width: 468px) {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    background-color: #2f2f2f;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
