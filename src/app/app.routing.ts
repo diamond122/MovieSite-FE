@@ -6,7 +6,7 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { MoviesComponent } from './components/movies/movies.component';
 
 const appRoutes: Routes = [
-  { path: '', component: MoviesComponent },
+  { path: '', redirectTo: 'movie', pathMatch: 'full' },
   { path: 'movie', component: MoviesComponent },
   { path: 'movie/:id', component: MovieProfileComponent },
   { path: 'user', component: UserProfileComponent },

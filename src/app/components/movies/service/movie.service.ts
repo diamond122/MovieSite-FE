@@ -37,4 +37,9 @@ export class MovieService {
     });
     return this.httpClient.get<Movie>(this.moviesUrl, { params: params });
   }
+
+  public getYouTubeVideo(id: string ): Observable<any> {
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=87829c8208f4f2fdaffabb5e72fa039f&append_to_response=videos`;
+    return this.httpClient.get<any>(url);
+  }
 }

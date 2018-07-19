@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingComponent } from '../loading/loading.component';
 @NgModule({
   imports: [CommonModule, FormsModule, MoviesRouting, NgbModule],
-  declarations: [MovieComponent, MoviesComponent, FilterPipe, LoadingComponent]
+  declarations: [MovieComponent, MoviesComponent, FilterPipe, LoadingComponent],
+  exports: [LoadingComponent]
 })
 export class MoviesModule {}
