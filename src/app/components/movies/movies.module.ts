@@ -5,8 +5,11 @@ import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies.component';
 import { MoviesRouting } from './movie-routing.module';
 import { FilterPipe } from '../../filter.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingComponent } from '../loading/loading.component';
 @NgModule({
-  imports: [CommonModule, FormsModule, MoviesRouting],
-  declarations: [MovieComponent, MoviesComponent, FilterPipe]
+  imports: [CommonModule, FormsModule, MoviesRouting, NgbModule],
+  declarations: [MovieComponent, MoviesComponent, FilterPipe, LoadingComponent],
+  exports: [LoadingComponent]
 })
 export class MoviesModule {}

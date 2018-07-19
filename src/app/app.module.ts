@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { ChartsModule } from '../../node_modules/ng2-charts';
 import { FormsModule } from '../../node_modules/@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { FormsModule } from '../../node_modules/@angular/forms';
     HttpClientModule,
     AuthModule,
     ChartsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

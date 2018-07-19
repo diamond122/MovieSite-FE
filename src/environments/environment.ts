@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  ApiUrl: ' http://127.0.0.1:5000'
+  ApiUrl: ' http://127.0.0.1:5000',
+  imageMovie: 'https://image.tmdb.org/t/p/w500',
+  bannerMovie: 'https://image.tmdb.org/t/p/w1280'
 };
 
 /*

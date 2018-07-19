@@ -27,6 +27,7 @@
     "jquery": "^3.3.1",
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.0.1",
+    "ngx-youtube-player": "^6.0.0",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

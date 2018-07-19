@@ -5,7 +5,7 @@ import { Movie } from './global/models/Movie';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-  transform(values: Movie[], searchText: string): any[] {
+  transform(values: any[], searchText: string): any[] {
     if (!values) {
       return [];
     }
@@ -16,7 +16,7 @@ export class FilterPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     return values.filter(it => {
-      return it.name.toLowerCase().includes(searchText);
+      return it.title.toLowerCase().includes(searchText);
     });
   }
 }

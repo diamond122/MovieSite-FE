@@ -1,0 +1,41 @@
+.movie-name-wraper {
+  background-color: #7d7d7d;
+  height: 216px;
+  text-align: center;
+  background-size: cover !important;
+  background-position: center center, center top !important;
+  background-repeat: repeat, no-repeat !important;
+}
+
+.movie-name {
+  color: white;
+  font-size: 30px;
+  position: relative;
+  top: 25%;
+}
+
+.point {
+  margin-top: 100px;
+  position: relative;
+  left: 27%;
+  color: goldenrod;
+  font-size: 20px;
+  font-weight: bold;
+  span {
+    margin-left: 15px;
+    color: white;
+  }
+}
+
+.content-wrapper {
+  margin-top: 100px;
+  .video-wrapper {
+    height: 200px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+  }
+}
+
+.summary-tytle .summary-content {
+  color: white;
+}
