@@ -1,99 +1,10 @@
-<!-- <div class="user-details text-center p-2">
-  <div class="card">
-    <div class="c-info p-3">
-      <h3 [innerText]="user.user ? user.user.name + ' ' + user.user.lastName : 'Username'"></h3>
-      <h5 [innerText]="user.user ? user.user.email : 'Email'"></h5>
-    </div>
-  </div>
-</div> -->
-
 <div class="user-details text-center p-2">
   <div class="card">
     <div class="c-head p-3">
-      <img src="https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?resize=640%2C426"
-        class="user-img" />
     </div>
-    <!-- <div class="upload">
-      <button type="button" class="btn btn-success btn-lg btn-circle" (click)="openModal(changePhoto)">
-        <i class="fas fa-camera"></i>
-      </button>
-    </div> -->
     <div class="c-info p-3">
       <h3 [innerText]="user.user ? user.user.name + ' ' + user.user.lastName : 'Name'"></h3>
       <h5 [innerText]="user.user ? user.user.email : 'Email'"></h5>
     </div>
   </div>
 </div>
-
-<div class="edit pl-5 pr-5">
-  <button class="btn btn-primary btn-block my-4" (click)="openModal(changeUname)">
-    <i class="fas fa-user"></i>CHANGE USERNAME</button>
-  <button class="btn btn-primary btn-block my-4" (click)="openModal(changePwd)">
-    <i class="fas fa-lock"></i>CHANGE PASSWORD</button>
-</div>
-
-<!-- <ng-template #changePhoto>
-  <div class="modal-header" style="color: black;">
-    <h4 class="modal-title pull-left">Change Photo</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <input type="file">
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-success">Aceptar</button>
-    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancelar</button>
-  </div>
-</ng-template> -->
-
-<ng-template #changeUname>
-  <div class="modal-header" style="color: black;">
-    <h4 class="modal-title pull-left">Change Username</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body" style="color: black;">
-    <form>
-      <div class="form-group">
-        <label for="Username">Username</label>
-        <input type="text" [(ngModel)]="cUsername" class="form-control" id="Username" placeholder="Username">
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-success" (click)="checkAvailability()" [disabled]="available">Aceptar</button>
-    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancelar</button>
-  </div>
-</ng-template>
-
-<ng-template #changePwd>
-  <div class="modal-header" style="color: black;">
-    <h4 class="modal-title pull-left">Change Password</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body" style="color: black;">
-    <form>
-      <div class="form-group">
-        <label for="OldPwd">Old Password</label>
-        <input type="password" [(ngModel)]="cUsername" class="form-control" id="OldPwd">
-      </div>
-      <div class="form-group">
-        <label for="NewPwd">New Password</label>
-        <input type="password" [(ngModel)]="cUsername" class="form-control" id="NewPwd">
-      </div>
-      <div class="form-group">
-        <label for="CheckPwd">Confirm Password</label>
-        <input type="password" [(ngModel)]="cUsername" class="form-control" id="CheckPwd">
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-success">Aceptar</button>
-    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancelar</button>
-  </div>
-</ng-template>

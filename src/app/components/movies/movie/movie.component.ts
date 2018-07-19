@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Movie } from 'src/app/global/models/Movie';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-movie',
@@ -7,10 +7,14 @@ import { Movie } from 'src/app/global/models/Movie';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-  @Input('movie') movie: Movie;
+  public imageUrl: string = environment.imageMovie;
+  @Input('movie') movie: any;
   liked: false;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.movie.poster_path = this.movie.poster_path !== null ? this.imageUrl + this.movie.poster_path : '/assets/img/poster.jpg';
+  }
 }

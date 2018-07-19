@@ -2,29 +2,15 @@
   <div class="block">
     <div class="thumbnail mt-4">
       <a [routerLink]="[movie.id]">
-        <img [src]="movie.imagePath" alt="" width="250" height="350">
+        <img [src]="movie.poster_path" alt="" width="250" height="350">
       </a>
-    </div>
-    <div class="btn-like">
-      <button class="btn btn-danger btn-circle btn-lg" (click)="liked = !liked">
-        <i *ngIf="liked; else notLiked" class="fas fa-heart"></i>
-        <ng-template #notLiked>
-          <i class="far fa-heart"></i>
-        </ng-template>
-      </button>
     </div>
     <div class="movie-info mt-3">
       <div class="row">
         <div class="col-8">
           <div class="movie-title">
-            {{movie.name}}
+            {{movie.title}}
           </div>
-          <small class="movie-category">Terror</small>
-        </div>
-        <div class="col-4 text-right">
-          <span class="percent">
-            100%
-          </span>
         </div>
       </div>
     </div>
